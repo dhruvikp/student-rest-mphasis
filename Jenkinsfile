@@ -1,6 +1,10 @@
 pipeline{
 
 	agent any
+	
+	tools {
+		maven 'Maven 3.3.9'
+	}
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-drk')
