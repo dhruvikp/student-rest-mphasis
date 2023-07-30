@@ -36,7 +36,11 @@ public class StudentController {
 
     @GetMapping("/")
     public ResponseEntity<Object> getAllStudents(){
-
         return ResponseEntity.ok().body(studentService.getStudents());
+    }
+    
+    @GetMapping("/error")
+    public void exit() {
+    	System.exit(1);
     }
 }
