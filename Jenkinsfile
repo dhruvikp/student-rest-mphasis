@@ -7,6 +7,13 @@ pipeline{
 	}
 
 	stages {
+	
+		stage('Project Build') {
+
+			steps {
+				sh 'mvn package'
+			}
+		}
 
 		stage('Build') {
 
