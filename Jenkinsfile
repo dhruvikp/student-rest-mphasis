@@ -8,8 +8,7 @@ pipeline {
         }
         stage('Building Docker image') {
             steps {
-                dockerNode('dhruviksparikh/student-rest:latest') {
-            }
+                sh 'docker build -t dhruviksparikh/student-rest:latest .'
         }
     }
 }
