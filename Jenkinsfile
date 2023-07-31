@@ -1,17 +1,16 @@
 pipeline {
     agent any
-    tools {
-        'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
-    }
     stages {
         stage('Build') {
             steps {
                     sh 'mvn clean install'
             }
         }
-        stage('foo') {
+        stage('Building Docker image') {
             steps {
-                sh 'docker version' // DOCKER_CERT_PATH is automatically picked up by the Docker client
+                script {
+                    docker.build
+                }
             }
         }
     }
