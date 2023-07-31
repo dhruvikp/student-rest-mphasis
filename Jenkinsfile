@@ -8,10 +8,9 @@ pipeline {
         }
         stage('Building Docker image') {
             steps {
-                script {
-                    docker.build("dhruviksparikh/student-rest:latest")
-                }
+                dockerNode('dhruviksparikh/student-rest:latest') {
             }
         }
     }
+}
 }
