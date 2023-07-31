@@ -9,7 +9,7 @@ pipeline {
         stage('Building Docker image') {
             steps {
                 script {
-                    docker.build
+                    docker.build("dhruviksparikh/student-rest:latest")
                 }
             }
         }
